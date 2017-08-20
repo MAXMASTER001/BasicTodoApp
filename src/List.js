@@ -11,6 +11,7 @@ export default class List extends Component {
         return (
             <TouchableHighlight
             key= {i}
+            
             onPress= {()=>onPressItem(i)}
             >
                 <Text
@@ -32,13 +33,22 @@ export default class List extends Component {
 
     }
 }
+let randomHex = () => {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
+const colors = ['#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e']
 const styles = {
     text: {
         color: 'white',
         fontSize: 25,
         padding:5,
         margin:5,
-        backgroundColor: '#8e44ad'
+        backgroundColor: randomHex()
     }
 }

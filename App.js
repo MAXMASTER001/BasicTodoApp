@@ -15,8 +15,9 @@ constructor() {
 
 
 
-onSubmitEditing(text) {
+addItem(text) {
 const { todos } = this.state
+
 this.setState({todos: [...todos, text]})
 
 }
@@ -32,7 +33,7 @@ removeItem = (index) => {
       <View style={styles.container}>
        <Header>Yapılacaklar</Header>
        <Input
-       onSubmitEditing={this.onSubmitEditing.bind(this)}
+       onSubmitEditing={this.addItem.bind(this)}
        />
        <List 
        list={todos}
